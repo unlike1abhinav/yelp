@@ -1,0 +1,81 @@
+<% layout('layouts/boilerplate') %>
+    <div class="row">
+        <h1 class="text-center">Create New Campground</h1>
+        <div class="col-6 offset-3">
+            <form action="/campgrounds" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+                <div>
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" name='campground[title]' id="title" class="form-control" required>
+                        <div class="valid-feedback">
+                            Looks fine
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="location" class="form-label">Location</label>
+                        <input type="text" name="campground[location]" id="location" class="form-control" required>
+                        <div class="valid-feedback">
+                            Looks fine
+                        </div>
+                    </div>
+                    <!-- <div class="mb-3">
+                        <label for="image" class="form-label">Image Url</label>
+                        <input type="text" name="campground[image]" id="image" class="form-control" required>
+                        <div class="valid-feedback">
+                            Looks fine
+                        </div>
+                    </div> -->
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Price</label>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="price-label">$</span>
+                            <input type="text" class="form-control" id="price" placeholder="0" aria-label="price"
+                                aria-describedby="price-label" name="campground[price]" required>
+                        </div>
+                        <div class="valid-feedback">
+                            Looks fine
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea type="text" name="campground[description]" id="description" class="form-control"
+                            required></textarea>
+                        <div class="valid-feedback">
+                            Looks fine
+                        </div>
+                    </div>
+                    <div class="input-group mb-3 custom-file">
+                        <input type="file" class="form-control" id="image" name="image" multiple>
+                        <label class="input-group-text custom-file-label" for="image">Upload Images</label>
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-success">Create Campground</button>
+                    </div>
+            </form>
+            <a href="/campgrounds">Back to Campgrounds</a>
+        </div>
+    </div>
+
+    <!-- <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (() => {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script> -->
+
+    <!-- Moved the above script to boilerplate so that can be accessed by edit form also -->
